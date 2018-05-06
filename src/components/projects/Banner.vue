@@ -3,10 +3,10 @@
 		<div class="container">
 			<div class="row text-center">
 				<div class="col">
-					<h5>Personal</h5>
+					<h5 @click="pullProjects" data-type="personal">Personal</h5>
 				</div>
 				<div class="col">
-					<h5>Work</h5>
+					<h5 @click="pullProjects" data-type="work">Work</h5>
 				</div>
 			</div>
 		</div>
@@ -14,7 +14,14 @@
 </template>
 
 <script>
-
+ export default{
+ 	methods: {
+ 		pullProjects(event){
+ 			let target = event.srcElement.dataset.type;
+ 			console.log(target);
+ 		}
+ 	}
+ }
 </script>
 
 <style scoped>
